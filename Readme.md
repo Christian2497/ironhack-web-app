@@ -37,7 +37,7 @@ https://trello.com/b/bp7kB4og/proyecto
 
 #### Github
 
-[Link Repo]()[Link Desploy]()
+[Link Repo](https://github.com/Christian2497/Ironhack-Web-App)[Link Desploy](github.com)
 
 #### Slides
 
