@@ -49,6 +49,9 @@ saveData = (event) => {
 
     //guardar el usuario en la base de datos
 
+    db.saveNewUser(newUser);
+    
+
    /*  database.createNewUser( newUser ); */
 
    // Vaciar formulario
