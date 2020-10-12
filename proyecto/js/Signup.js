@@ -14,14 +14,39 @@ class Signup{
 // Metodos para manejar la información que insetamos en el input 
 handleEmailInput = (event) => {
     const email = event.target.value;
+
+    validator.validateValidEmail(email);
+
+    const errorsObj = validator.getErrors();
+
+    if(!errorsObj.invalidEmailError){
+        validator.validateUniqueEmail(email)
+    }
+
+
+    this.setErrorMessages();
 }
 
 handlePasswordInput = (event) => {
     const password = event.target.value;
+
+    const repeatedPassword = this.repeatPasswordInput.value;
+
+    validator.validatePassword(password);
+    validator.validatePasswordRepeat(password, repeatedPassword);
+
+    this.setErrorMessages();
 }
 
 handleRepeatPasswordInput = (event) => {
-    const repeatPassword = event.target.value;
+    const repeatedPassword = event.target.value;
+
+    const password = this.passwordInput.value;
+
+    validator.validatePasswordRepeat(password, repeatedPassword);
+    validator.validatePassword(password);
+
+    this.setErrorMessages();
 }
 
 saveData = (event) => {
@@ -60,6 +85,12 @@ saveData = (event) => {
     this.emailInput.value = "";
     this.passwordInput.value = "";
     this.repeatPasswordInput.value = "";
+
+
+
+
+
+    validator.resetValidator();
 }
 
 
@@ -75,6 +106,20 @@ addListeners = () => {
     this.buttonInput.addEventListener('click', this.saveData);
 }
 
+
+setErrorMessages = () => {
+    this.messageWrapper.innerHTML = "";
+
+    const errorObj = validator.getErrors();
+
+    const errorStringArr = Object.values(errorObj);
+
+    errorStringArr.forEach( (errorStr) => {
+        const errorMessageP = document.createElement("p");
+        errorMessageP.innerHTML = errorStr;
+        this.messageWrapper.appendChild(errorMessageP);
+    });
+}
 
 
 
