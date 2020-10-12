@@ -4,8 +4,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 nav{
-    height: 150px;
     display: flex;
+    width: 100%;
+    height: 150px;
     /* background-color: black; */
     /* background-image: url('../assets/images/cesped.jpg'); */
 }
@@ -16,12 +17,17 @@ nav{
     padding-top: 20px;
 }
 
-.nav-bar ul{
-    display: block;
-    list-style: none;
-    float: right;
-    margin-right: 20px;
+.nav-bar a{
+    text-decoration: none;
 }
+.nav-bar li{
+    display: inline-flex;
+    list-style: none;
+    padding: 10px;
+    
+}
+
+/* Section 1 */
 
 .section1{
     background-image: url('../assets/images/section1.jpg');
@@ -47,4 +53,52 @@ h2{
     padding-right: 60px;
     flex-direction: column;
     width: 40%
+}
+
+.go-button {
+	box-shadow: 4px 5px 0px 1px #3e7327;
+	background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color: #77b55a;
+	border-radius: 16px;
+	display: inline-block;
+	cursor: pointer;
+    color: #ffffff;
+	font-family: Arial;
+	font-size: 22px;
+	padding: 7px 25px;
+	text-decoration: none;
+    text-shadow: 0px 1px 0px #5b8a3c;
+    margin-top: 100px;
+}
+.go-button:hover {
+	background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color: #72b352;
+}
+.go-button:active {
+	position: relative;
+	top: 1px;
+}
+
+
+
+/* Footer */
+
+footer{
+    background-color: black;
+}
+h4{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+.footer img{
+    width: 280px;
+    height: 200px;
+}
+
+.footer a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
