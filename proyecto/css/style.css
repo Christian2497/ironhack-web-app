@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    /* font-family: Trebuchet MS, Arial, Helvetica, sans-serif; */
+    box-sizing: border-box;
     font-family: Comic Sans MS, cursive;
 }
 /* Nav-bar */
@@ -10,31 +10,36 @@ nav{
     display: flex;
     width: 100%;
     height: 130px;
-    /* background-color: black; */
-    /* background-image: url('../assets/images/cesped.jpg'); */
 }
 .navbar img{
     width: 150px;
     height: 120px;
     padding: 5px 20px;
 }
-.navbar-container{
+
+.navbar span{
+    padding-right: 10px;
+}
+
+.navbar-toggler-icon{
+       float: right;
+}
+/* .navbar-container{
     list-style-type: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-left: 25em;
-
     margin-right: 0px;
-}
+} */
 
-.navbar-a{
+/* .navbar-a{
     text-decoration: none;
     padding: 0.70em;
     margin-right: 2em;
     font-size: 1.8em;
     color: black;
-}
+} */
 
 /* Section 1 */
 
@@ -67,7 +72,6 @@ h2{
 
 .go-button{
 	position: relative;
-	display: block;
 	padding: 25px 10px;
 	border-radius: 6px;
 	text-align: center;
@@ -83,7 +87,7 @@ h2{
 	text-decoration: none;
 	transition: all ease 0.5s;
     background:#10B87B;
-    margin-left: 200px;
+    margin-left: 0px;
     margin-top: 40px;
 }
  
@@ -157,7 +161,8 @@ h2{
 .texto-seccion2{
     text-align: center;
     font-size: 35px;
-    padding-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 /* .articulos{
     display: flex;
@@ -167,10 +172,10 @@ h2{
     flex-wrap: nowrap;  
 
 } */
-.row p{
+#section1 p{
     width: 70%;
 }
-.row img{
+#section1 img{
     width: 60px;
 }
 
@@ -179,6 +184,26 @@ h2{
 .texto-ligas{
     background-color: green;
     text-align: center;
+}
+
+/* FAQ */
+
+.titulo{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.titulo h2{
+    font-size: 60px;
+}
+
+.preguntas{
+    width: 50%;
+    border: 3px groove rgb(96, 209, 3) ;
+    background-color: lightgreen;
+    margin: 50px;
+    box-shadow: 3px 3px 30px #666;
+    margin-left: 300px;
 }
 
 
@@ -194,34 +219,75 @@ h2{
     padding-top: 50px;
 }
 
-.signup-form{
+.signup form{
     text-align: center;
     display: flex;
     flex-direction: column;
-    width
+    width : 67%;
     align-items: center;
     padding-top: 50px;
 }
 
-.signup-form input{
+.signup form input{
     display: flex;
     margin-top: 30px;
-    margin-left: 500px;
+    margin-left: 450px;
     padding: 25px;
     width: 500px;
     text-align: center;
     align-items: center;
 }
 
-.signup-form button{
+.signup form button{
     width: 300px;
     text-align: center;
-    margin-left: 600px;
-    margin-top: 30px;
+    margin-left: 450px;
+    margin-top: 50px;
+}
+
+.message-container{
+    color: white;
+    padding-top: 40px;
 }
 
 
+/* Log in */
 
+.login{
+    text-align: center;
+    background-image: url("../assets/images/fondocesped.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+    padding-top: 50px;
+}
+
+.login form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width : 67%;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.login form input{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 450px;
+    padding: 25px;
+    width: 500px;
+    text-align: center;
+    align-items: center;
+}
+
+.login form button{
+    width: 300px;
+    text-align: center;
+    margin-left: 450px;
+    margin-top: 50px;
+}
 
 
 /* Footer */
@@ -239,15 +305,16 @@ footer{
     text-align: center;
     padding-top: 50px;
 }
-.imagenes-redes{
+/* .row1{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.imagenes-redes img{
+} */
+#row img{
     width: 200px;
     height: 200px;
     padding: 40px;
+    margin: 20px;
     border-radius: 70px;
 }
 
@@ -257,3 +324,74 @@ h6{
     font-size: 15px;
 }
 
+
+/* Responsive */
+
+@media screen and (max-width: 768px){
+    .texto{
+        text-align: center;
+        padding-top: 100px;
+        padding-right: 60px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+
+    footer{
+        height: 700px;
+    }
+
+    .signup form input{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-left:120px;
+    }
+
+    .signup form button{
+        margin-left:200px;
+        width: 60%;
+    }
+
+    .login form input{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 120px; 
+    }
+    
+    .login form button{
+        margin-left:200px;
+        width: 60%;
+    }
+
+    .preguntas{
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 120px;
+    }
+}
+
+@media screen and (max-width: 578px){
+    #row img{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .signup form input{
+        width: 75%;
+    }
+
+    .signup form button{
+        width: 50%;
+    }
+
+    .preguntas{
+        width: 60%;
+    }
+}
