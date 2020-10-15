@@ -25,6 +25,7 @@ handleEmailInput = (event) => {
 
 
     this.setErrorMessages();
+    this.checkButton();
 }
 
 handlePasswordInput = (event) => {
@@ -36,6 +37,7 @@ handlePasswordInput = (event) => {
     validator.validatePasswordRepeat(password, repeatedPassword);
 
     this.setErrorMessages();
+    this.checkButton();
 }
 
 handleRepeatPasswordInput = (event) => {
@@ -47,6 +49,7 @@ handleRepeatPasswordInput = (event) => {
     validator.validatePassword(password);
 
     this.setErrorMessages();
+    this.checkButton();
 }
 
 saveData = (event) => {
@@ -89,8 +92,10 @@ saveData = (event) => {
 
 
 
-
+    this.showSuccessMessage();
+    this.removeMessages();
     validator.resetValidator();
+    this.buttonInput.disabled = true;
 }
 
 
@@ -122,8 +127,48 @@ setErrorMessages = () => {
 }
 
 
+checkButton = () => {
+    const errorsObj = validator.getErrors();
+    const errorsArr = Object.values(errorsObj);
 
 
+    if(errorsArr.length > 0){
+        this.buttonInput.disabled = true;
+    }else{
+        this.buttonInput.disabled = false;
+    }
+
+}
+
+removeMessages = () => {
+    setTimeout(() => {
+        this.messageWrapper.innerHTML = '';
+    }, 2000)
+}
+
+showSuccessMessage = () => {
+    this.messageWrapper.innerHTML = '';
+
+    const errorsObj = validator.getErrors();
+    const errorsStringArr = Object.values(errorsObj);
+
+    if(errorsStringArr > 0){
+        return;
+    }
+
+    const successMessageP = document.createElement('p');
+    successMessageP.innerHTML = "La cuenta ha sido creada con éxito";
+
+
+    this.messageWrapper.appendChild(successMessageP);
+
+    if(successMessageP) this.redirect();
+}
+
+
+redirect = () => {
+    setTimeout (() => location.assign("index.html"), 2000)
+}
 
 }
 

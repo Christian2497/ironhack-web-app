@@ -1,29 +1,38 @@
-/* 
-function getLeagues(){
-} */
+"use strict";
 
-async function getLeaguesAA() {
 const section = document.querySelector(".leagues-list");
 
-for(let i = 0; i < 11; i++){
-    try{
-        const response = await fetch(`https://apiclient.besoccerapps.com/scripts/api/api.php?key=01da72449d29a7702aba403ec3fb4e98&tz=Europe/Madrid&format=json&req=categories&filter=all`);
+function getLeagues(id){
+    fetch(`https://cors-anywhere.herokuapp.com/https://apiclient.besoccerapps.com/scripts/api/api.php?key=01da72449d29a7702aba403ec3fb4e98&tz=Europe/Madrid&format=json&req=categories&filter=all
+    `)
+    .then((response) => response.json())
+    .then((data) => {
+      data.category.map((oneLeague) => {
+        const league = document.createElement("div");  
+        if(oneLeague.id == id){
+          league.innerHTML = `
+          <a href="${oneLeague.alias}.html"><img src="${oneLeague.logo}" alt="${oneLeague.name}"/>
+          <h3>${oneLeague.name}</h3></a>`
+          return section.appendChild(league)
+        }
+      })
+    })
+    .catch(err => console.log(err))
+  }
 
-        const data = await response.json();
+  getLeagues("1")
+  getLeagues("10") 
+  getLeagues("107")
+  getLeagues("7")
+  getLeagues("8")
+  getLeagues("16")
 
-        const article = document.createElement('article');
 
-        article.innerHTML = `
-        <img src="${data.logo}" alt="${data.name}"/>
-        <h3>${data.name}</h3>        
-        `;
+  
+/* async function getLeaguesAA() {
 
-        section.appendChild(article);
-    } catch(err){
-        console.log(err);
-    }
-}
+}  */
 
-}
+/* getLeaguesAA(); */
 
-getLeaguesAA();
+

@@ -44,6 +44,13 @@ class Login{
     
         this.messageContainer.appendChild(message);
     
+
+        if(user) this.redirect();
+    }
+
+
+    redirect = () => {
+        setTimeout (() => location.assign('index.html'), 2000)
     }
 
 
