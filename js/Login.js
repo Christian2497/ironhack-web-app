@@ -36,7 +36,7 @@ class Login{
 
         if(user){
             message.classList.add("correct-message");
-            message.innerHTML = `Hola, ${user.email}`;
+            message.innerHTML = `Bienvenido, ${user.email}`;
         } else{
             message.innerHTML = "El email y/o contraseña es incorrecto";
         }

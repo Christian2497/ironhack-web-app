@@ -190,22 +190,33 @@ h2{
 .ligas{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     max-width: 100%;
 }
 
 .leagues-list{
-    display: inline;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.leagues{
+    width: 500px;
 }
 
 /* Equipos */
 
 .equipos-list{
     display: flex;
-    justify-content: flex-start;
-    margin: 20px;
-    float: left;
-    align-items: center;
+    justify-content: center;
     max-width: 100%;
+    flex-wrap: wrap;
+    margin-left: 70px;
+}
+.team{
+    width: 400px;
 }
 
 
@@ -351,6 +362,11 @@ h6{
 
 /* Responsive */
 
+@media screen and (max-width: 430px){
+    .team{
+        width: 300px;
+    }
+}
 
 @media screen and (max-width: 990px){
     .nav-item{
@@ -373,7 +389,7 @@ h6{
     }
 
     footer{
-        height: 700px;
+        height: 900px;
     }
 
     .signup form input{
@@ -425,7 +441,19 @@ h6{
         width: 50%;
     }
 
+    .login form input{
+        width: 75%;
+    }
+
+    .login form button{
+        width: 50%;
+    }
+    
     .preguntas{
         width: 60%;
+    }
+
+    .leagues{
+        width: 250px;
     }
 }

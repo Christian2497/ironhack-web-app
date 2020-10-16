@@ -11,8 +11,10 @@ function getLeagues(id){
         const league = document.createElement("div");  
         if(oneLeague.id == id){
           league.innerHTML = `
+          <div class="leagues">
           <a href="${oneLeague.alias}.html"><img src="${oneLeague.logo}" alt="${oneLeague.name}"/>
-          <h3>${oneLeague.name}</h3></a>`
+          <h3>${oneLeague.name}</h3></a>
+          </div>`
           return section.appendChild(league)
         }
       })

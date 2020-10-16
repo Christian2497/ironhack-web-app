@@ -11,8 +11,10 @@ async function apiEquiposLiga() {
     const equiposLiga = equipos.team.map((oneTeam) => {
         const equipo = document.createElement("div");
         equipo.innerHTML = `
+        <div class="team">
         <img src="${oneTeam.shield_big} alt="${oneTeam.fullName}"/>
         <h3> ${oneTeam.fullName}</h3>
+        </div>
         `
         return section.appendChild(equipo);
     })  
