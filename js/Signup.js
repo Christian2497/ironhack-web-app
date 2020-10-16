@@ -167,7 +167,7 @@ showSuccessMessage = () => {
 
 
 redirect = () => {
-    setTimeout (() => location.assign("Index.html"), 2000)
+    setTimeout (() => location.assign("index.html"), 2000)
 }
 
 }
