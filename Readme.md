@@ -8,9 +8,9 @@ You can see your favorite team !!
 
 ### MVP (DOM - CANVAS)
 
-- **Home**: page where I will make a brief explanation about the history
-- **App page 1**: on this page it will include the most important leagues today. It can be accessed from the navigation bar
-- **App page 2:** on this page will be the teams of the league you have selected. It can be accessed by clicking on the selected league.
+- **Home**: page where I make a brief explanation of what can be searched on the page.
+- **Leagues**: on this page it will include the most important leagues today. It can be accessed from the navigation bar
+- **Teams:** on this page will be the teams of the league you have selected. It can be accessed by clicking on the selected league.
 - **FAQ:** include questions related to soccer or to any league or team
 - **Sign up:** is the registration of new user
 - **Log in:** is access for web user.
